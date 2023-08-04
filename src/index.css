@@ -11,3 +11,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* $base-spacing-unit: 24px;
+$half-spacing-unit: $base-spacing-unit / 2; */
+table{
+  width: 100%;
+  text-align: center;
+  /* display: block; */
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 115%;
+  overflow: auto;
+  /* width: auto; */
+  /* border: 1px solid #EEEEEE; */
+}
+
+th {
+  background-color: black;
+  color: white;
+  font-weight: normal;
+  padding: 20px 30px;
+  text-align: center;
+}
+td {
+  background-color: rgb(238, 238, 238);
+  color: rgb(111, 111, 111);
+  padding: 20px 30px;
+  font-weight: normal;
+}
+td input{
+  font-family: 'Roboto', sans-serif;
+    color: #333;
+    font-size: 1.2rem;
+     margin: 10px ;
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+    background-color: rgb(255, 255, 255);
+    border: 0.1rem solid ;
+    transition: all 0.3s;
+}
+

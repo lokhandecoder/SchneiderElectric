@@ -1,0 +1,126 @@
+.container-2 {
+  /* display: flex; */
+  background-color: white;
+  width: 100%;
+  height: auto;
+}
+h3 {
+  color: #3dcd58;
+}
+.break {
+  width: 100%;
+}
+.pagebody {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 2%;
+  padding-bottom: 6%;
+}
+.form-element {
+  display: flex;
+  justify-content: space-between;
+}
+.form-element input {
+  margin-right: 10%;
+}
+.form-element select {
+  margin-right: 10%;
+}
+.form-element textarea {
+  margin-right: 10%;
+}
+.form-element label {
+  color: black;
+  font-size: larger;
+  margin: 10px;
+}
+.input-type2 {
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  font-size: 1.2rem;
+  margin: 10px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  border: 0.1rem solid;
+  width: 50%;
+  display: block;
+  /* border-bottom: 0.3rem solid transparent; */
+  transition: all 0.3s;
+}
+.centerbutton {
+  font-family: "Roboto", sans-serif;
+  background-color: #3dcd58;
+  color: white;
+  font-size: 1.2rem;
+  margin: 10px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  /* background-color: rgb(255, 255, 255); */
+  border: 0.1rem solid;
+  width: 20%;
+  display: block;
+  margin-left: 40%;
+  margin-right: 30%;
+  /* border-bottom: 0.3rem solid transparent; */
+  transition: all 0.3s;
+}
+.editbutton {
+  font-family: "Roboto", sans-serif;
+  background-color: orange;
+  color: white;
+  font-size: 1.2rem;
+  margin: 10px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  border: 0.1rem solid;
+  /* width: 20%; */
+}
+.cancelbutton {
+  font-family: "Roboto", sans-serif;
+  background-color: red;
+  color: white;
+  font-size: 1.2rem;
+  margin: 10px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  border: 0.1rem solid;
+}
+.savebutton {
+  font-family: "Roboto", sans-serif;
+  background-color: #3dcd58;
+  color: white;
+  font-size: 1.2rem;
+  margin: 10px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  border: 0.1rem solid;
+}
+.required:after {
+  content: " *";
+  color: red;
+}
+.normalbutton {
+  font-family: "Roboto", sans-serif;
+  background-color: #3dcd58;
+  color: white;
+  font-size: 1.2rem;
+  margin: 10px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  /* background-color: rgb(255, 255, 255); */
+  border: 0.1rem solid;
+  width: 20%;
+  display: block;
+  /* border-bottom: 0.3rem solid transparent; */
+  transition: all 0.3s;
+}
+.slide-down {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+}
+
+.slide-down.visible {
+  max-height: 500px; /* Adjust the value as per your content's height */
+}
