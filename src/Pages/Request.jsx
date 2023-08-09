@@ -48,7 +48,7 @@ function Request() {
   return (
     <div className="pagebody">
       <div className="title">
-        <h3>Coach Request</h3>
+        <h3>Request Form</h3>
       </div>
       <div className="break">
         <hr></hr>

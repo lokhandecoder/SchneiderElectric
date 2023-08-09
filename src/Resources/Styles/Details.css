@@ -48,6 +48,29 @@ h3 {
   /* border-bottom: 0.3rem solid transparent; */
   transition: all 0.3s;
 }
+.form-select{
+  margin-left: 34%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  border: 0.1rem solid;
+
+}
+
+.input-type3{
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  font-size: 1.2rem;
+  margin: 10px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  border: 0.1rem solid;
+  width: 50%;
+  /* display: block; */
+  /* border-bottom: 0.3rem solid transparent; */
+  transition: all 0.3s;
+
+}
 .centerbutton {
   font-family: "Roboto", sans-serif;
   background-color: #3dcd58;

@@ -9,7 +9,8 @@ function AvailabilityTable({
   data,
 }) {
   return (
-    <table>
+    <div className="table-container">
+      <table  className={`data-table ${data.length > 5 ? 'scrollable' : ''}`}>
       <thead>
         <tr>
           <th style={{ width: "10%" }}>ID</th>
@@ -64,6 +65,9 @@ function AvailabilityTable({
         ))}
       </tbody>
     </table>
+
+    </div>
+    
   );
 }
 

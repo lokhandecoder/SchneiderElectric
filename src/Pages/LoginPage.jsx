@@ -3,19 +3,21 @@ import { useNavigate } from "react-router-dom";
 import "../Resources/Styles/LoginPage.css";
 
 function LoginPage() {
-  const [login, setLogin] = useState([]);
+  const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const email = "test123";
+    const password = "1234";
     const user = e.target.elements.username.value;
     const pass = e.target.elements.password.value;
 
-    if (user === "test123" || pass === "1234") {
-      alert("You are Logged IN");
+    if (user === email || pass === password ) {
+      // alert("You are Logged IN");
       navigate("/request");
     } else {
-      alert("PLease enter your correct credentials");
+      setErrorMessage("Please enter your correct credentials");
     }
   };
 
@@ -38,12 +40,13 @@ function LoginPage() {
             </div>
             <div className="forminput">
               <input
-                type="text"
+                type="password"
                 name="password"
                 className="input-type"
                 placeholder="Enter your password"
               />
             </div>
+            {errorMessage && <p style={{ color: 'red', marginLeft : '15px'}}>{errorMessage}</p>}
             <div className="forminput">
               <button
                 type="submit"

@@ -34,8 +34,8 @@ th {
 }
 td {
   background-color: rgb(238, 238, 238);
-  color: rgb(111, 111, 111);
-  padding: 20px 30px;
+  color: rgb(0, 0, 0);
+  /* padding: 20px 30px; */
   font-weight: normal;
 }
 td input{
@@ -49,4 +49,24 @@ td input{
     border: 0.1rem solid ;
     transition: all 0.3s;
 }
+.active{
+  /* color: red !important; */
+  background-color: #3e8e41 !important;
+}
+.table-container {
+  max-height: 400px; /* Adjust the height as needed */
+  overflow: auto;
+}
 
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th, .data-table td {
+  border: 1px solid #ccc;
+}
+
+.scrollable {
+  overflow-y: scroll;
+}

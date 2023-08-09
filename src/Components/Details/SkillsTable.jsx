@@ -9,8 +9,8 @@ function SkillsTable({
   data,
 }) {
   return (
-    <div>
-      <table>
+    <div  className="table-container">
+      <table  className={`data-table ${data.length > 5 ? 'scrollable' : ''}`}>
         <thead>
           <tr>
             <th style={{ width: "10%" }}>ID</th>
@@ -24,11 +24,12 @@ function SkillsTable({
               <td>{d.id}</td>
               <td>
                 {editingRow && editingRow.id === d.id ? (
-                  <input
-                    type="text"
-                    value={editingRow.skill}
-                    onChange={(e) => handleInputChange(e, "skill")}
-                  />
+                  <select className="input-type3" name="skill" id="skill" value={editingRow.skill} onChange={(e) => handleInputChange(e, 'skill')}>
+                    <option value="plumber">PLumber</option>
+                    <option value="doctor">doctor</option>
+                    <option value="engineer">engineer</option>
+                    <option value="astronaut">astronaut</option>
+                  </select>
                 ) : (
                   d.skill
                 )}

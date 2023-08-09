@@ -3,25 +3,26 @@ import React from "react";
 import "../../Resources/Styles/NavItem.css";
 // import admin from "../Resources/Images/user.png";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function NavItem() {
+  const location = useLocation();
   return (
     <div>
       <nav>
-        <Link to={"/"} className="links">
+        <Link to={"/"} className="links" >
           Home
         </Link>
-        <Link to={"/request"} className="links">
+        <Link to={"/request"} className={"/request" === location.pathname ? "links active" : 'links'}>
           Request Form
         </Link>
-        <Link to={"/skills"} className="links">
+        <Link to={"/skills"}className={"/skills" === location.pathname ? "links active" : 'links'}>
           Skills Details
         </Link>
-        <Link to={"/toolkit"} className="links">
+        <Link to={"/toolkit"}className={"/toolkit" === location.pathname ? "links active" : 'links'}>
           Coach Toolkit
         </Link>
-        <Link to={"/detail"} className="links">
+        <Link to={"/detail"}className={"/detail" === location.pathname ? "links active" : 'links'}>
           Coach Details
         </Link>
         <div className="dropdown-menu">

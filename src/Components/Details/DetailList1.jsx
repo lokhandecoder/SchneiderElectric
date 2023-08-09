@@ -69,7 +69,7 @@ function DetailList1() {
         <form onSubmit={handleAdd}>
           <div className="form-element">
             <label className="required">Skills</label>
-            <select className="input-type2" name="skills">
+            <select className="input-type2" name="skills" >
               <option value="Plumber">Plumber</option>
               <option value="Doctor">Doctor</option>
               <option value="Engineer">Engineeer</option>

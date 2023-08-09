@@ -4,8 +4,10 @@ import "../../Resources/Styles/Navbar.css";
 // import logo from '../Resources/Images/logo2.png'
 import logo from "../../Resources/Images/newlogo.png";
 import NavItem from "./NavItem";
+import { Route, Routes } from "react-router-dom";
 
 function Navbar(data) {
+  const pathname = window.location.pathname;
   return (
     <>
       <div className="topbar">
@@ -16,7 +18,15 @@ function Navbar(data) {
           </a>
         </div>
       </div>
-      <NavItem data={data} />
+      <Routes>
+        <Route path="/"></Route>
+        <Route path="/request" element={<NavItem />}></Route>
+        <Route path="/formlist" element={<NavItem />}></Route>
+        <Route path="/skills" element={<NavItem />}></Route>
+        <Route path="/toolkit" element={<NavItem />}></Route>
+        <Route path="/detail" element={<NavItem />}></Route>
+        <Route path="coachlist" element={<NavItem />}></Route>
+      </Routes>
     </>
   );
 }
