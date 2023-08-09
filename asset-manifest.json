@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/SchneiderElectric/static/css/main.d5905844.css",
-    "main.js": "/SchneiderElectric/static/js/main.ee13856b.js",
+    "main.css": "/SchneiderElectric/static/css/main.4dc4efd5.css",
+    "main.js": "/SchneiderElectric/static/js/main.cf439001.js",
     "static/js/787.aad65a53.chunk.js": "/SchneiderElectric/static/js/787.aad65a53.chunk.js",
     "static/media/line.png": "/SchneiderElectric/static/media/line.72c2a8627a11b3aae1f6.png",
     "static/media/newlogo.png": "/SchneiderElectric/static/media/newlogo.15e3ba5fcacb6b2ac64e.png",
+    "static/media/up.png": "/SchneiderElectric/static/media/up.f73059766261b8d2b1b8.png",
     "static/media/logo.svg": "/SchneiderElectric/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/SchneiderElectric/index.html",
-    "main.d5905844.css.map": "/SchneiderElectric/static/css/main.d5905844.css.map",
-    "main.ee13856b.js.map": "/SchneiderElectric/static/js/main.ee13856b.js.map",
+    "main.4dc4efd5.css.map": "/SchneiderElectric/static/css/main.4dc4efd5.css.map",
+    "main.cf439001.js.map": "/SchneiderElectric/static/js/main.cf439001.js.map",
     "787.aad65a53.chunk.js.map": "/SchneiderElectric/static/js/787.aad65a53.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d5905844.css",
-    "static/js/main.ee13856b.js"
+    "static/css/main.4dc4efd5.css",
+    "static/js/main.cf439001.js"
   ]
 }
