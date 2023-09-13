@@ -21,12 +21,14 @@ table{
   -webkit-font-smoothing: antialiased;
   font-size: 115%;
   overflow: auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
   /* width: auto; */
   /* border: 1px solid #EEEEEE; */
 }
 
 th {
-  background-color: black;
+  background-color: #3dcd58;
   color: white;
   font-weight: normal;
   padding: 20px 30px;
@@ -56,6 +58,9 @@ td input{
 .table-container {
   max-height: 400px; /* Adjust the height as needed */
   overflow: auto;
+  border-radius: 1.2rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 }
 
 .data-table {

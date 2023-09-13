@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ToolkitForm from "../Components/ToolKit/ToolkitForm";
 import ToolKitList from "../Components/ToolKit/ToolKitList";
+import axios from "axios";
+import {toast} from 'react-toastify';
 
 const data = [
   {
@@ -14,6 +16,8 @@ const data = [
 function Toolkit() {
   const [tool, setTool] = useState(data);
   const [editingRow, setEditingRow] = useState(null);
+  const url = "https://localhost:7151/api/Toolkit";
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,21 +27,19 @@ function Toolkit() {
     const link = e.target.elements.link.value;
 
     const newtool = {
-      id: tool.length + 1,
       name: name,
-      material: material,
+      type: material,
       link: link,
     };
-    setTool([...tool, newtool]);
-    const forLocalStorageToolKit = [...tool, newtool];
-    localStorage.setItem("toolkit", JSON.stringify(forLocalStorageToolKit));
+    axios.post(url,newtool).then((res) => setTool(res.data)).catch((e) => console.log(e));
   };
 
   useEffect(() => {
-    const storedData = localStorage.getItem("toolkit");
-    if (storedData) {
-      setTool(JSON.parse(storedData));
-    }
+    // const storedData = localStorage.getItem("toolkit");
+    // if (storedData) {
+    //   setTool(JSON.parse(storedData));
+    // }
+    axios.get(url).then((res) => setTool(res.data)).catch((e) => console.log(e));
   }, []);
 
   const handleInputChange = (e, field) => {
@@ -48,9 +50,32 @@ function Toolkit() {
     setEditingRow(item);
   };
   const handleSave = () => {
+    // setTool((prev) =>
+    //   prev.map((row) => (row.id === editingRow.id ? editingRow : row))
+    // );
+    axios.put(`https://localhost:7151/api/Toolkit/${editingRow.id}`,editingRow).then((res) => {console.log(res);
+    toast.success("Updated Successfully",{
+      position: "top-right",
+      autoClose: 2000, // Duration in milliseconds
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    })
+  }).catch((e) => {console.log(e.response.data);
+    toast.error(e.response.data,
+    {
+      position : 'top-right',
+      autoClose : 3000,
+      hideProgressBar: true,
+      closeOnClick : true,
+      pauseOnHover: false,
+      draggable : true,
+    })
+  });
     setTool((prev) =>
-      prev.map((row) => (row.id === editingRow.id ? editingRow : row))
-    );
+    prev.map((row) => (row.id === editingRow.id ? editingRow : row))
+  );
     setEditingRow(null);
   };
   const handleCancel = () => {

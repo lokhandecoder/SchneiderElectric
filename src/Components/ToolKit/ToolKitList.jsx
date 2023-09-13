@@ -39,11 +39,11 @@ function ToolKitList({
               {editingRow && editingRow.id === item.id ? (
                 <input
                   type="text"
-                  value={editingRow.material}
-                  onChange={(e) => handleInputChange(e, "material")}
+                  value={editingRow.type}
+                  onChange={(e) => handleInputChange(e, "type")}
                 />
               ) : (
-                item.material
+                item.type
               )}
             </td>
             <td>

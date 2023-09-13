@@ -27,11 +27,11 @@ function Skillstable({
               {editingRow && editingRow.id === d.id ? (
                 <input
                   type="text"
-                  value={editingRow.skill}
-                  onChange={(e) => handleInputChange(e, "skill")}
+                  value={editingRow.skills}
+                  onChange={(e) => handleInputChange(e, "skills")}
                 />
               ) : (
-                d.skill
+                d.skills
               )}
             </td>
             <td>

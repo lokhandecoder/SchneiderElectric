@@ -3,21 +3,15 @@ import "../Resources/Styles/Details.css";
 import line from "../Resources/Images/line.png";
 import ReuqestForm from "../Components/RequestForm/ReuqestForm";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { toast } from "react-toastify";
 
-const input = [
-  {
-    id: 1,
-    fname: "Amit",
-    mname: "Suresh",
-    lname: "Lokhande",
-    email: "amitlokhande909@gmail.com",
-    contact: 9987753904,
-    address: "H-2, Room no-6, Deonar Colony",
-  },
-];
+
+
 function Request() {
-  const [data, setData] = useState(input);
   const Navigate = useNavigate();
+  const url = "https://localhost:7151/api/RequestForm";
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,7 +24,6 @@ function Request() {
     const address = e.target.elements.address.value;
 
     const newList = {
-      id: data.length + 1,
       fname: fname,
       mname: mname,
       lname: lname,
@@ -40,13 +33,27 @@ function Request() {
       address: address,
     };
 
-    setData([...data, newList]);
-    const forLocalStorageRequest = [...data, newList];
-    localStorage.setItem("request", JSON.stringify(forLocalStorageRequest));
+    axios.post(url,newList).then((res) => toast.success("Your Request has been noted",{
+      position: "top-center",
+      autoClose: 2000, // Duration in milliseconds
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+      
+    }) ).catch((e) => toast.error(e.data,{
+      position : "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+    }));
     Navigate("/formlist");
   };
   return (
-    <div className="pagebody">
+
+    <div className="pagebody square-in-bottom-right">
       <div className="title">
         <h3>Request Form</h3>
       </div>
@@ -56,6 +63,7 @@ function Request() {
       <div className="container-2">
         <ReuqestForm handleSubmit={handleSubmit} />
       </div>
+
     </div>
   );
 }

@@ -1,6 +1,16 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+
 
 function DetailForm({ handleSubmit }) {
+  const url = "https://localhost:7151/api/CoachDetails";
+  const [gender,setgender] = useState(null);
+
+  useEffect(() => {
+    axios.get(url).then((res) => console.log(res.data)).catch((e) => console.log(e));
+
+  },[])
+  console.log(gender);
   return (
     <form onSubmit={handleSubmit}>
       <div className="form-element">

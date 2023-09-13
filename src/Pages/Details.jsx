@@ -3,9 +3,14 @@ import DetailForm from "../Components/Details/DetailForm";
 import DetailList1 from "../Components/Details/DetailList1";
 import DetailList2 from "../Components/Details/DetailList2";
 import { Navigate, useNavigate } from "react-router-dom";
+import Topheader from "../Components/Navbar/Topheader";
+import axios from 'axios';
+
 
 function Details() {
   const [detail, setDetail] = useState([]);
+  const url = "https://localhost:7151/api/CoachDetails";
+
   const Navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -18,21 +23,19 @@ function Details() {
     const dob = e.target.elements.dob.value;
 
     const newList = {
-      id: detail.length + 1,
       fname: fname,
       mname: mname,
       lname: lname,
       gender: gender,
       dob: dob,
     };
-
-    setDetail([...detail, newList]);
-    const forLocalStorageCoach = [...detail, newList];
-    localStorage.setItem("coachdetail", JSON.stringify(forLocalStorageCoach));
+    console.log(newList);
+    axios.post(url,newList).then((res) => setDetail(res.data)).catch((e) => console.log(e));
     Navigate("/coachlist");
   };
 
   return (
+
     <div className="pagebody" >
       <div className="title">
         <h3>Coach Details Form</h3>

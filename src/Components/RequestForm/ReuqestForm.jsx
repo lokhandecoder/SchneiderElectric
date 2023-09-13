@@ -9,7 +9,7 @@ function ReuqestForm({ handleSubmit }) {
       </div>
       <div className="form-element">
         <label>MIddle Name</label>
-        <input type="text" name="mname" className="input-type2" />
+        <input type="text" name="mname" className="input-type2" required />
       </div>
       <div className="form-element">
         <label className="required">Last Name</label>
@@ -21,14 +21,15 @@ function ReuqestForm({ handleSubmit }) {
       </div>
       <div className="form-element">
         <label>Contact No</label>
-        <input type="text" name="contact" className="input-type2" />
+        <input type="text" name="contact" className="input-type2"  required />
       </div>
       <div className="form-element">
         <label>Address</label>
         <textarea
           className="input-type2"
           style={{ height: "150px" }}
-          name="address"
+          name="address" 
+          required
         ></textarea>
       </div>
       <div className="center button">

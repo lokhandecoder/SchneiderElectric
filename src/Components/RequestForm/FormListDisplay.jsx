@@ -32,12 +32,6 @@ function FormListDisplay({ Data,sortOrder, handleSort, sortBy  }) {
         <thead>
           <tr>
             <th onClick={() => handleSort('id')}>ID  {sortBy === 'id' && <span>{sortOrder === 'asc' ? '▲' : '▼'} </span>}</th>
-            {/* <th onClick={() => {setSortBy('fname'); toggleSortOrder();}}>First Name</th>
-            <th onClick={() => {setSortBy('mname'); toggleSortOrder();}}>MIddle Name</th>
-            <th onClick={() => {setSortBy('lname'); toggleSortOrder();}} >Last Name</th>
-            <th onClick={() => {setSortBy('email'); toggleSortOrder();}}>Email</th>
-            <th onClick={() => {setSortBy('contact'); toggleSortOrder();}}>Contact</th>
-            <th onClick={() => {setSortBy('address'); toggleSortOrder();}}>Address</th> */}
             <th onClick={() => handleSort('fname')}>First Name  {sortBy === 'fname' && <span>{sortOrder === 'asc' ? '▲' : '▼'}</span>}</th>
             <th onClick={() => handleSort('mname')}>MIddle Name  {sortBy === 'mname' && <span>{sortOrder === 'asc' ? '▲' : '▼'}</span>}</th>
             <th onClick={() => handleSort('lname')}>Last Name  {sortBy === 'lname' && <span>{sortOrder === 'asc' ? '▲' : '▼'}</span>}</th>

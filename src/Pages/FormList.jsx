@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
 import FormListDisplay from "../Components/RequestForm/FormListDisplay";
-import { json } from "react-router-dom";
+import Topheader from "../Components/Navbar/Topheader";
+import { json, useLocation } from "react-router-dom";
+import axios from "axios";
 
 function FormList() {
   const [list, setList] = useState([]);
+  const url = "https://localhost:7151/api/RequestForm";
+
+  const location = useLocation();
+
   useEffect(() => {
-    const storedData = localStorage.getItem("request");
-    if (storedData) {
-      setList(JSON.parse(storedData));
-    }
+    axios.get(url).then((res) => {console.log(res.data);setList(res.data);}).catch((e) => console.log(e));
   }, []);
 
   const [sortOrder, setSortOrder] = useState("asc");
@@ -72,6 +75,7 @@ function FormList() {
     setSortOrder(sortOrder === "asc" ? "desc" : "asc");
   };
   return (
+
     <div className="pagebody">
       <div className="title">
         <h3>Registration Details</h3>

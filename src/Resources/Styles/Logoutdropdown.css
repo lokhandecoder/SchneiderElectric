@@ -1,0 +1,7 @@
+.logoutbutton {
+    width: auto;
+    height: auto;
+    max-height: 26px !important;  
+    max-width: 215px;
+    mix-blend-mode: darken;
+}

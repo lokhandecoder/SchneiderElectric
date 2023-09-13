@@ -10,9 +10,6 @@ function NavItem() {
   return (
     <div>
       <nav>
-        <Link to={"/"} className="links" >
-          Home
-        </Link>
         <Link to={"/request"} className={"/request" === location.pathname ? "links active" : 'links'}>
           Request Form
         </Link>
@@ -38,6 +35,7 @@ function NavItem() {
         </div>
       </nav>
     </div>
+
   );
 }
 

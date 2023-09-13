@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {toast} from 'react-toastify';
 import "../Resources/Styles/LoginPage.css";
-import Topheader from "../Components/Navbar/Topheader";
 import axios from 'axios';
+import Topheader from "../Components/Navbar/Topheader";
 
-function LoginPage() {
+
+function SignUpPage() {
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
   const handleSubmit = (e) => {
@@ -24,32 +25,30 @@ function LoginPage() {
     // }
     const user = e.target.elements.username.value;
     const pass = e.target.elements.password.value;
-    const url = "https://localhost:7151/api/Login";
-    const login = {
+    const email = e.target.elements.email.value;
+    const url = "https://localhost:7151/api/Register";
+    const signup = {
       username : user,
+      email : email,
       password : pass,
     }
-    function send(){
-      navigate("/request");
-      localStorage.setItem("login", login.username);
-    }
-    console.log(login);
+    console.log(signup);
     if(user,pass){
-      axios.post(url,login).then((res) => {
+      axios.post(url,signup).then((res) => {
         console.log(res);
-        toast.success("Login Successfully!",{
+        toast.success("Signup Successfully, Please login using credentials",{
           position: "top-right",
-          autoClose: 3000, // Duration in milliseconds
+          autoClose: 2000, // Duration in milliseconds
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
           draggable: true,
         });
-        send();
-      }).catch((e) => 
+        navigate("/");
+    }).catch((e) => 
       {
         console.log(e);
-        toast.error("Login Failed",
+        toast.error("Signup Failed, Please enter proper credentials",
         {
           position : 'top-right',
           autoClose : 3000,
@@ -76,7 +75,7 @@ function LoginPage() {
       <div className="container">
         <div className="card"></div>
         <div className="card2">
-          <h5>SM Global PA Coaching Services</h5>
+          <h5>Welcome to SM Global PA Coaching Services</h5>
         </div>
         <div className="form1">
           <form onSubmit={handleSubmit}>
@@ -85,7 +84,15 @@ function LoginPage() {
                 type="text"
                 name="username"
                 className="input-type"
-                placeholder="Enter your User ID"
+                placeholder="Enter your Username"
+              />
+            </div>
+            <div className="forminput">
+              <input
+                type="text"
+                name="email"
+                className="input-type"
+                placeholder="Enter your Email"
               />
             </div>
             <div className="forminput">
@@ -103,14 +110,13 @@ function LoginPage() {
                 className="input-type"
                 style={{ backgroundColor: "#3dcd58", color: "white" }}
               >
-                Sign In
+                Register
               </button>
             </div>
           </form>
         </div>
       </div>
-
   );
 }
 
-export default LoginPage;
+export default SignUpPage;

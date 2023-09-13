@@ -7,17 +7,71 @@ import Skills from "./Pages/Skills";
 import Toolkit from "./Pages/Toolkit";
 import Details from "./Pages/Details";
 import CoachList from "./Pages/CoachList";
+import SignUpPage from "./Pages/SignUpPage";
+import HomePage from "./Pages/HomePage";
+import Topheader from "./Components/Navbar/Topheader";
+import { useEffect, useState } from "react";
+import Protected from "./Protected";
+import UpdateData from "./Pages/UpdateData ";
 
 function PageRoutes() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <Routes>
-      <Route path="/" element={<LoginPage />}></Route>
-      <Route path="/request" element={<Request />}></Route>
-      <Route path="/formlist" element={<FormList />}></Route>
-      <Route path="/skills" element={<Skills />}></Route>
-      <Route path="/toolkit" element={<Toolkit />}></Route>
-      <Route path="/detail" element={<Details />}></Route>
-      <Route path="coachlist" element={<CoachList />}></Route>
+      <Route path="/demo" element={<UpdateData />}></Route>
+      <Route
+        path="/"
+        element={<HomePage setIsLoggedIn={setIsLoggedIn} />}
+      ></Route>
+      <Route
+        path="/request"
+        element={
+          <Protected isLoggedIn={isLoggedIn}>
+            <Request />
+          </Protected>
+        }
+      ></Route>
+      <Route
+        path="/formlist"
+        element={
+          <Protected isLoggedIn={isLoggedIn}>
+            <FormList />
+          </Protected>
+        }
+      ></Route>
+      <Route
+        path="/skills"
+        element={
+          <Protected isLoggedIn={isLoggedIn}>
+            <Skills />
+          </Protected>
+        }
+      ></Route>
+      <Route
+        path="/toolkit"
+        element={
+          <Protected isLoggedIn={isLoggedIn}>
+            <Toolkit />
+          </Protected>
+        }
+      ></Route>
+      <Route
+        path="/detail"
+        element={
+          <Protected isLoggedIn={isLoggedIn}>
+            <Details />
+          </Protected>
+        }
+      ></Route>
+      <Route
+        path="coachlist"
+        element={
+          <Protected isLoggedIn={isLoggedIn}>
+            <CoachList />
+          </Protected>
+        }
+      ></Route>
     </Routes>
   );
 }

@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
 import CoachListDisplay from "../Components/Details/CoachListDisplay";
+import Topheader from "../Components/Navbar/Topheader";
+import axios from "axios";
+
 
 function CoachList() {
   const [list, setList] = useState([]);
+  const url = "https://localhost:7151/api/CoachDetails";
 
   useEffect(() => {
-    const storedData = localStorage.getItem("coachdetail");
-    if (storedData) {
-      setList(JSON.parse(storedData));
-    }
+    axios.get(url).then((res) => setList(res.data)).catch((e) => console.log(e));
   }, []);
 
   return (
+
     <div className="pagebody" >
       <div className="title">
         <h3>Coach List</h3>
